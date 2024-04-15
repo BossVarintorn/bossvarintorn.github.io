@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyApp</title>
+  <link rel="shortcut icon" href="https://img5.pic.in.th/file/secure-sv1/Welcome-to-1040-x-1040-px.md.png" />
+  
+  <style>
+    .responsive-iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div> 
+    <iframe id="myframe" class="responsive-iframe" src="" allowFullScreen></iframe>
+  </div>
+  <script>
+    const apps = new URL(window.location);
+    const formUrl = apps.searchParams.get('apps');
+    const url = decodeURIComponent(formUrl)
+          document.getElementById('myframe').src = url
+  </script>
+</body>
+</html>
